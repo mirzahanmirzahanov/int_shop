@@ -1,5 +1,20 @@
-{
-	"products": [
+<template>
+  <div class="catalog">
+    <v-catalog-item 
+      v-for="product in products" 
+      :key="product.article"
+      :prodData="products"
+    />
+  </div>
+</template>
+
+<script>
+  import VCatalogItem from '@/components/VCatalogItem.vue'
+export default {
+  components:{ VCatalogItem },
+  name: "catalog",
+  data:() => ({
+    products: [
 		{
 			"image": "1.jpg",
 			"name": "T-shirt 1",
@@ -49,4 +64,9 @@
 			"category": "Женские"
 		}
 	]
-}
+  })
+};
+</script>
+
+<style lang="scss" scoped>
+</style>
