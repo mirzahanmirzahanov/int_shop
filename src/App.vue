@@ -1,8 +1,8 @@
-<template>
+<template >
   <main class="main">
     <router-view></router-view>
   </main>
-  <cart />
+  <cart class="other"/>
 </template>
 
 <script>
