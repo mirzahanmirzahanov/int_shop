@@ -2,7 +2,6 @@
   <main class="main">
     <router-view></router-view>
   </main>
-  <cart />
 </template>
 
 <script>
@@ -17,12 +16,16 @@ export default {
   min-height: 100%;
   display: flex;
   flex-direction: column;
+  background-color: #929292;
   .main {
     flex: 1 1 auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    .container{
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
   }
 }
 </style>
