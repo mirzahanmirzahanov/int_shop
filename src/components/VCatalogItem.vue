@@ -15,11 +15,7 @@
     <div class="v-catalog-item__category">
       <p>{{ productData.category }}</p>
     </div>
-    <button 
-      @click="sendToDataParent"
-      class="btn"
-    >Add to cart
-    </button>
+    <button @click="sendToDataParent" class="btn">Add to cart</button>
   </div>
 </template>
 
@@ -31,11 +27,11 @@ export default {
       type: Object,
     },
   },
-  methods:{
-    sendToDataParent(){
-      this.$emit('sendArticle', this.productData.article)
-    }
-  }
+  methods: {
+    sendToDataParent() {
+      this.$emit("sendArticle", this.productData.article);
+    },
+  },
 };
 </script>
 
