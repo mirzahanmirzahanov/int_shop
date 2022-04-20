@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import {mapActions,mapGetters} from 'vuex'
+import { mapActions, mapGetters } from "vuex";
 
 import VCatalogItem from "@/components/VCatalogItem.vue";
 
@@ -21,24 +21,18 @@ export default {
   components: { VCatalogItem },
   name: "catalog",
   data: () => ({}),
-  computed:{
-    ...mapGetters([
-      'PRODUCTS'
-    ])
+  computed: {
+    ...mapGetters(["PRODUCTS"]),
   },
   methods: {
-    ...mapActions([
-      'GET_PRODUCTS_API',
-      'ADD_TO_CART'
-    ]),
-    addToCart(data){
-      this.ADD_TO_CART(data)
-      
-    }
+    ...mapActions(["GET_PRODUCTS_API", "ADD_TO_CART"]),
+    addToCart(data) {
+      this.ADD_TO_CART(data);
+    },
   },
-  mounted(){
-    this.GET_PRODUCTS_API()
-  }
+  mounted() {
+    this.GET_PRODUCTS_API();
+  },
 };
 </script>
 

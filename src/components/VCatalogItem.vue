@@ -28,9 +28,14 @@ export default {
     },
   },
   methods: {
-    addToCart(){
-      this.$emit('addToCart', this.productData)
-    }
+    addToCart() {
+      if (this.productData.quantity == 0) {
+        this.$emit("addToCart", this.productData);
+        this.productData.quantity++;
+      } else {
+        this.productData.quantity++;
+      }
+    },
   },
 };
 </script>
@@ -45,15 +50,15 @@ export default {
     }
   }
 
-  &__name {
-  }
+  // &__name {
+  // }
 
-  &__article {
-  }
+  // &__article {
+  // }
 
-  &__category {
-  }
+  // &__category {
+  // }
 }
-.btn {
-}
+// .btn {
+// }
 </style>

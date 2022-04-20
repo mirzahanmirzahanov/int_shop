@@ -12,17 +12,34 @@
         {{ cart_item_data.price }}
       </p>
     </div>
-    <div class="v-cart-item__quantity"></div>
-    <button class="btn">Delete</button>
+    <div class="v-cart-item__quantity">
+      <p>quantity: {{ cart_item_data.quantity }}</p>
+    </div>
+    <button class="btn" @click="deleteFromCart">Delete</button>
   </div>
 </template>
 
 <script>
 export default {
   name: "v-cart-item",
+  data: () => [],
   props: {
     cart_item_data: {
       type: Object,
+      default() {
+        return {};
+      },
+    },
+  },
+  computed: {},
+  methods: {
+    deleteFromCart() {
+      if (this.cart_item_data.quantity > 1) {
+        this.cart_item_data.quantity--;
+      } else {
+        this.$emit("deleteFromCart", this.cart_item_data);
+        this.cart_item_data.quantity = 0;
+      }
     },
   },
 };
@@ -41,16 +58,20 @@ export default {
     }
   }
 
-  &__name {
-  }
+  // &__name {
+  // }
 
-  &__article {
-  }
+  // &__article {
+  // }
 
-  &__category {
+  // &__category {
+  // }
+
+  &__quantity {
+    display: flex;
   }
 }
-.btn {
+// .btn {
 
-}
+// }
 </style>
