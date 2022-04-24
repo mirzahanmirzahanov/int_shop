@@ -34,12 +34,7 @@ export default {
   computed: {},
   methods: {
     deleteFromCart() {
-      if (this.cart_item_data.quantity > 1) {
-        this.cart_item_data.quantity--;
-      } else {
-        this.$emit("deleteFromCart", this.cart_item_data);
-        this.cart_item_data.quantity = 0;
-      }
+      this.$emit("deleteFromCart", this.cart_item_data);
     },
   },
 };

@@ -1,13 +1,13 @@
 <template>
   <main class="main">
-    <router-view></router-view>
+    <home-page></home-page>
   </main>
 </template>
 
 <script>
-import Cart from "./views/Cart.vue";
+import HomePage from "./views/HomePage.vue";
 export default {
-  components: { Cart },
+  components: { HomePage },
 };
 </script>
 
@@ -21,7 +21,7 @@ export default {
     flex: 1 1 auto;
     display: flex;
     flex-direction: column;
-    .container{
+    .container {
       width: 100%;
       max-width: 1200px;
       margin: 0 auto;

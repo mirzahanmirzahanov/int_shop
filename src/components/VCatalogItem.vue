@@ -29,12 +29,7 @@ export default {
   },
   methods: {
     addToCart() {
-      if (this.productData.quantity == 0) {
-        this.$emit("addToCart", this.productData);
-        this.productData.quantity++;
-      } else {
-        this.productData.quantity++;
-      }
+      this.$emit("addToCart", this.productData);  
     },
   },
 };

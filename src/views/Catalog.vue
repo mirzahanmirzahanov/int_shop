@@ -1,5 +1,9 @@
 <template>
   <div class="container">
+
+    <router-link :to="{name: 'cart'}">
+      <p class="container__link-to-card">cart: {{ CART.length }}</p>
+    </router-link>
     <h1>Catalog</h1>
     <div class="catalog-list">
       <v-catalog-item
@@ -22,7 +26,7 @@ export default {
   name: "catalog",
   data: () => ({}),
   computed: {
-    ...mapGetters(["PRODUCTS"]),
+    ...mapGetters(["PRODUCTS", "CART"]),
   },
   methods: {
     ...mapActions(["GET_PRODUCTS_API", "ADD_TO_CART"]),
@@ -36,9 +40,15 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .container {
+  &__link-to-card {
+    display: inline-block;
+    padding: 20px;
+    border: 2px solid #f2f2f2;
+  }
   h1 {
+    margin: 30px 0 0 0;
     font-size: 20px;
   }
   .catalog-list {
