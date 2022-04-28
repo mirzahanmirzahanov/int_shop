@@ -24,9 +24,7 @@ export default {
 		}
 	},
 	actions: {
-		ADD_TO_CART({
-			commit
-		}, product) {
+		ADD_TO_CART({ commit }, product) {
 			commit('SET_CART', product)
 		},
 		DELETE_FROM_CART({

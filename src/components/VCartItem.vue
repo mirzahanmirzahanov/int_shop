@@ -13,7 +13,12 @@
       </p>
     </div>
     <div class="v-cart-item__quantity">
-      <p>quantity: {{ cart_item_data.quantity }}</p>
+      <p>quantity:</p>
+      <p>
+        <span>+</span>
+        {{ cart_item_data.quantity }}
+        <span>-</span>
+      </p>
     </div>
     <button class="btn" @click="deleteFromCart">Delete</button>
   </div>
@@ -63,7 +68,10 @@ export default {
   // }
 
   &__quantity {
+    cursor: pointer;
     display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
 // .btn {
