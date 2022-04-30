@@ -45,7 +45,9 @@ export default {
   &__link-to-card {
     display: inline-block;
     padding: 20px;
-    border: 2px solid #f2f2f2;
+    background: #00d432;
+    border-radius: 5px;
+    color: #ffffff;
   }
   h1 {
     margin: 30px 0 0 0;

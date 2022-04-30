@@ -12,6 +12,8 @@
           :key="cart.article"
           :cart_item_data="cart"
           @deleteFromCart="deleteFromCart(index)"
+          @increment="incrementItem(index)"
+          @decrement="decrementItem(index)"
         />
       </div>
     </div>
@@ -45,9 +47,19 @@ export default {
     },
   },
   methods: {
-    ...mapActions(["DELETE_FROM_CART"]),
+    ...mapActions([
+      "DELETE_FROM_CART",
+      "INCREMENT_ITEM",
+      "DECREMENT_ITEM"
+    ]),
     deleteFromCart(index) {
       this.DELETE_FROM_CART(index);
+    },
+    incrementItem(index) {
+      this.INCREMENT_ITEM(index);
+    },
+    decrementItem(index) {
+      this.DECREMENT_ITEM(index);
     },
   },
 };
@@ -75,8 +87,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgb(0, 212, 50);
-  // padding: 40px 0;
+  background: #00d432;
   height: 100px;
   p {
     font-size: 23px;
