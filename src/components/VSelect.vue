@@ -1,13 +1,11 @@
 <template>
   <div class="v-select">
-    <p class="title" 
-      @click="areOptionsVisible = !areOptionsVisible"
-    >
-      {{selected}}
+    <p class="title" @click="areOptionsVisible = !areOptionsVisible">
+      {{ selected }}
     </p>
     <div class="options" v-if="areOptionsVisible">
-      <p 
-        v-for="(category, index) in productCategories" 
+      <p
+        v-for="(category, index) in productCategories"
         :key="index"
         @click="selectCategories(category)"
       >
@@ -23,33 +21,33 @@ export default {
   data: () => ({
     areOptionsVisible: false,
   }),
-    props: {
-      productCategories: {
-        type: Array,
-        default() {
-          return [];
-        },
+  props: {
+    productCategories: {
+      type: Array,
+      default() {
+        return [];
       },
-      selected:{
-        type: String,
-        default: ''
-      }
     },
+    selected: {
+      type: String,
+      default: "",
+    },
+  },
   methods: {
-    selectCategories(category){
-      this.$emit('selectedCategory', category)
-      this.areOptionsVisible = false
+    selectCategories(category) {
+      this.$emit("selectedCategory", category);
+      this.areOptionsVisible = false;
     },
-    hideSelect(){
-      this.areOptionsVisible = false
-    }
+    hideSelect() {
+      this.areOptionsVisible = false;
+    },
   },
-  mounted(){
-    document.addEventListener('click', this.hideSelect.bind(this), true)
+  mounted() {
+    document.addEventListener("click", this.hideSelect.bind(this), true);
   },
-  beforeDestroy(){
-    document.removeEventListener('click', this.hideSelect)
-  }
+  beforeDestroy() {
+    document.removeEventListener("click", this.hideSelect);
+  },
 };
 </script>
 
@@ -58,11 +56,11 @@ export default {
   margin: 20px 0;
   width: 100%;
   max-width: 200px;
-    p {
-      text-align: center;
-      cursor: pointer;
-      padding: 10px;
-    }
+  p {
+    text-align: center;
+    cursor: pointer;
+    padding: 10px;
+  }
   .title {
     border: 1px solid #00d432;
     margin: 0 0 15px 0;
