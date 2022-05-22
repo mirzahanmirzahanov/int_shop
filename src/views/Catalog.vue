@@ -91,41 +91,42 @@ export default {
       this.ADD_TO_CART(data);
     },
     sortByCategories(category) {
-      let vm = this;
       // this.sortedProducts = [];
       // this.PRODUCTS.map(function (item) {
-      //   if (item.category === category.name) {
-      //     vm.sortedProducts.push(item);
+        //   if (item.category === category.name) {
+          //     vm.sortedProducts.push(item);
       //   }
       // });
+      // let vm = this;
       this.sortedProducts = [...this.PRODUCTS];
-      // this.sortedProducts = this.sortedProducts.filter((item) => {
-      //   return item.price >= this.minPrice && item.price <= this.maxPrice
-      // })
-      // if(category) {
-      //   this.selected = category.name;
-      //   this.sortedProducts = this.sortedProducts.filter((item) => {
-      //     return item.price >= this.minPrice && item.price <= this.maxPrice && item.category === category.name
-      //   })
-      // }
-      if (category) {
+      this.sortedProducts = this.sortedProducts.filter((item) => {
+        return item.price >= this.minPrice && item.price <= this.maxPrice
+      })
+      if(category) {
         this.selected = category.name;
         this.sortedProducts = this.sortedProducts.filter((item) => {
-          return (
-            item.price >= vm.minPrice &&
-            item.price <= vm.maxPrice &&
-            item.category === category.name
-          );
-        });
-      } else {
-        this.sortedProducts = this.sortedProducts.filter((item) => {
-          return (
-            item.price >= vm.minPrice &&
-            item.price <= vm.maxPrice &&
-            item.category === category.name
-          );
-        });
+          return item.price >= this.minPrice && item.price <= this.maxPrice && item.category === category.name
+        })
       }
+      // if (category) {
+      //   this.selected = category.name;
+      //   this.sortedProducts = this.sortedProducts.filter((item) => {
+      //     return (
+      //       item.price >= vm.minPrice &&
+      //       item.price <= vm.maxPrice &&
+      //       item.category === category.name
+      //     );
+      //   });
+      // } else {
+      //   this.selected = category.name;
+      //   this.sortedProducts = this.sortedProducts.filter((item) => {
+      //     return (
+      //       item.price >= vm.minPrice &&
+      //       item.price <= vm.maxPrice &&
+      //       item.category === category.name
+      //     );
+      //   });
+      // }
     },
   },
   mounted() {

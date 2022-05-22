@@ -20,7 +20,7 @@
         <span @click="incrementItem">+</span>
       </p>
     </div>
-    <button class="btn" @click="deleteFromCart">Delete</button>
+    <button class="btn close-btn" @click="deleteFromCart">Delete</button>
   </div>
 </template>
 
@@ -51,7 +51,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .v-cart-item {
   display: flex;
   justify-content: space-between;
@@ -64,6 +64,9 @@ export default {
     }
   }
 
+    .close-btn {
+      background: #c90000;
+    }
   // &__name {
   // }
 
@@ -71,7 +74,7 @@ export default {
   // }
 
   // &__category {
-  // }
+    // }
 
   &__quantity {
     cursor: pointer;
@@ -79,8 +82,5 @@ export default {
     flex-direction: column;
     align-items: center;
   }
-}
-.btn {
-  background: #c90000;
 }
 </style>
